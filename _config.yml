@@ -9,20 +9,19 @@ theme_settings:
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "developer blog" # used by search engines
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+     <p>Studying in 42seoul and Interested in Quant Trade</p>
 
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: fldh3746@gmail.com # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
@@ -48,7 +47,7 @@ theme_settings:
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
   katex: true # Enable if using math markup
-  search: false # Enable the search feature
+  search: true # Enable the search feature
 
   # Localization strings
   str_follow_on: "Follow on"
@@ -67,11 +66,18 @@ theme_settings:
   google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
 
   # Post navigation
-  post_navigation: false
+  post_navigation: true
+  
+encoding: 'utf-8'
+# Configure the plugin here
+category_path: "category" # <- default value
+category_layout: "category.html" # <- default value
 
 # PAGINATION
 paginate: 5
 paginate_path: "blog/page:num"
+
+animation: true
 
 # BUILD SETTINGS
 markdown: kramdown
@@ -79,7 +85,14 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-category-pages
+gem:
+    - jekyll-sitemap
+    - jekyll-feed
+    - wdm
+theme: jekyll-theme-type
 exclude:
   - Gemfile
   - Gemfile.lock
