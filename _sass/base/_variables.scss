@@ -10,31 +10,32 @@ $padding-b-small: 1%;
 $padding-x-small: 3%;
 
 // Brand colours
-$social-color: #000000;
-$brand-color: #fff;
-$background-color: #fff;
-$border-color: rgba(0, 0, 0, 0.1); // rgba recommended if using feature images
+$social-color: #8d8c8c;
+$brand-color: rgba(0, 0, 0, 0.089);
+$background-color: rgba(0, 0, 0, 0.897);
+$border-color: rgb(66, 66, 66); // rgba recommended if using feature images
 
 // Typography colours
-$text-color: #383838;
-$link-color: #DF0174;
-$selection-color: #D4D4D4; // visible when highlighting text
+$text-color: #a1a1a1;
+$link-color: #a3a2a2;
+$selection-color: #474747; // visible when highlighting text
 
 // Tags color
-$tags-color: #b0b0b0;
+$tags-color: #4d4d4d;
 
 //Search color
-$search-color: #999;
+$search-color: rgb(143, 143, 143);
 
 // Header colours
-$header-link-color: #DF0174;
-$header-brand-color: #000000;
+$header-link-color: #686868;
+$header-brand-color: #fffefe;
 
 // Feature image for articles
-$feature-image-text-color: #fff;
+$feature-image-text-color: rgb(0, 0, 0);
 $feature-image-size: cover; // options include "cover", "contain", "auto"
 
 // Header description box
-$header-desc-background-color: #FFF;
-$header-desc-text-color: #b0b0b0;
-$header-desc-link-color: #02453D;
+$header-desc-background-color: rgb(26, 26, 26);
+$header-desc-text-color: #818181;
+$header-desc-link-color: #ffffff;
+
