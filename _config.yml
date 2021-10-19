@@ -74,7 +74,7 @@ category_path: "category" # <- default value
 category_layout: "category.html" # <- default value
 
 # PAGINATION
-paginate: 5
+paginate: 8
 paginate_path: "blog/page:num"
 
 animation: true
