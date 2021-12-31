@@ -1,6 +1,5 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
+gem 'github-pages', group: :jekyll_plugins
+gem "jekyll-theme-type", "~> 1.1"
 
-gem 'bundler'
-gem 'jekyll', '~> 4.0'
-gem 'jekyll-paginate'
-gem 'jekyll-tagging'
+gem "webrick", "~> 1.7"
