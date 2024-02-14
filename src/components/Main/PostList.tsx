@@ -15,7 +15,7 @@ import { useRecoilState } from "recoil";
 import { currentViewAtom } from "../../recoil/store";
 import { useFetchPost } from "../../hooks/useFetchPost";
 import { useEffect } from "react";
-import { removeTags } from "../../utils";
+// import { removeTags } from "../../utils";
 
 const PostListComponent: React.FC<any> = ({ data }) => {
   if (!data) return null; // data가 없으면 아무것도 반환하지 않음
@@ -63,7 +63,7 @@ const PostListComponent: React.FC<any> = ({ data }) => {
               <Typography component="h2" variant="h5">
                 {post.title}
               </Typography>
-              <Typography
+              {/* <Typography
                 variant="subtitle1"
                 paragraph
                 component="div"
@@ -75,7 +75,7 @@ const PostListComponent: React.FC<any> = ({ data }) => {
                 }}
               >
                 {removeTags(post.content).slice(0, 250)}
-              </Typography>
+              </Typography> */}
               <Box sx={{ position: "absolute", bottom: "10px" }}>
                 <Typography variant="subtitle1" color="secondary">
                   작성자: {post.author}

@@ -14,10 +14,25 @@ import {
   ModeCommentOutlined,
   ShareOutlined,
 } from "@mui/icons-material";
-import Markdown from "markdown-to-jsx";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { currentViewAtom } from "../../recoil/store";
+import parse from "html-react-parser";
+import { useFetchHtmlContent } from "../../hooks/useFetchHtmlContent";
+
+const HtmlComponent = (htmlString: any) => <div>{parse(htmlString)}</div>;
 
 const PostComponent = ({ post }: any) => {
-  const { content, tags, likes_count, comments } = post.post;
+  const { tags, likes_count, comments } = post.post;
+
+  const [currentView] = useRecoilState(currentViewAtom);
+
+  const { htmlContent, fetchHtmlContent } = useFetchHtmlContent();
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 fetchHtmlContent를 호출
+    fetchHtmlContent(currentView.id);
+  }, []);
 
   return (
     <>
@@ -48,7 +63,7 @@ const PostComponent = ({ post }: any) => {
         />
         <CardContent>
           <Typography variant="body2" component="div">
-            <Markdown>{content}</Markdown>
+            <HtmlComponent htmlString={htmlContent} />
           </Typography>
         </CardContent>
         <Box
