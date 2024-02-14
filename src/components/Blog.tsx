@@ -32,8 +32,7 @@ interface SidebarProps {
 
 const sidebar: SidebarProps = {
   title: "About",
-  description:
-    "Hello! I'm Alvin Lee, residing in Seoul. I'm a quant trader.",
+  description: "Hello! I'm Alvin Lee, residing in Seoul. I'm a quant trader.",
   todayHits: 0,
   totalHits: 0,
 };
