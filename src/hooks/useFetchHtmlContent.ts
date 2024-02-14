@@ -1,20 +1,17 @@
 import { useState } from "react";
 
-interface HtmlContent {
-  data: string;
-}
-
 export const useFetchHtmlContent = () => {
-  const [htmlContent, setHtmlContent] = useState<HtmlContent | null>(null);
+  const [htmlContent, setHtmlContent] = useState<string>("");
 
   const fetchHtmlContent = async (url: string) => {
     try {
       const response = await fetch(url);
+      console.log("response:", response);
       const data = await response.text();
-      setHtmlContent({ data });
+      setHtmlContent(data as string);
     } catch (error) {
       console.error("Error fetching HTML content:", error);
-      setHtmlContent(null);
+      setHtmlContent("Error fetching HTML content" as string);
     }
   };
 

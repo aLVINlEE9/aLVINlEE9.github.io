@@ -8,7 +8,6 @@ import { useRecoilState } from "recoil";
 import { currentViewAtom } from "../recoil/store";
 import { useFetchPost } from "../hooks/useFetchPost";
 import { useEffect } from "react";
-import { removeTags } from "../utils";
 
 interface FeaturedPostProps {
   post: {
@@ -57,7 +56,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
             <Typography variant="subtitle1" color="text.secondary">
               {new Date(post.created_at).toLocaleDateString()}
             </Typography>
-            <Typography
+            {/* <Typography
               variant="subtitle1"
               paragraph
               component="div"
@@ -69,7 +68,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
               }}
             >
               {removeTags(post.content).slice(0, 100)}
-            </Typography>
+            </Typography> */}
             <Typography variant="subtitle1" color="primary">
               Continue reading...
             </Typography>

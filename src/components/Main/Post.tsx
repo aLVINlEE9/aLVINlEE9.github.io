@@ -15,23 +15,24 @@ import {
   ShareOutlined,
 } from "@mui/icons-material";
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { currentViewAtom } from "../../recoil/store";
 import parse from "html-react-parser";
 import { useFetchHtmlContent } from "../../hooks/useFetchHtmlContent";
 
-const HtmlComponent = (htmlString: any) => <div>{parse(htmlString)}</div>;
+interface HtmlComponentProps {
+  htmlString: string;
+}
+
+const HtmlComponent = (htmlComponent: HtmlComponentProps) => (
+  <div>{parse(htmlComponent.htmlString)}</div>
+);
 
 const PostComponent = ({ post }: any) => {
-  const { tags, likes_count, comments } = post.post;
-
-  const [currentView] = useRecoilState(currentViewAtom);
+  const { content, tags, likes_count, comments } = post.post;
 
   const { htmlContent, fetchHtmlContent } = useFetchHtmlContent();
 
   useEffect(() => {
-    // 컴포넌트가 마운트될 때 fetchHtmlContent를 호출
-    fetchHtmlContent(currentView.id);
+    fetchHtmlContent(content);
   }, []);
 
   return (
@@ -63,7 +64,7 @@ const PostComponent = ({ post }: any) => {
         />
         <CardContent>
           <Typography variant="body2" component="div">
-            <HtmlComponent htmlString={htmlContent} />
+            <HtmlComponent htmlString={htmlContent as string} />
           </Typography>
         </CardContent>
         <Box
