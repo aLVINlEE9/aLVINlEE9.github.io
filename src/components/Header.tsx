@@ -97,7 +97,13 @@ export default function Header(props: HeaderProps) {
           >
             <GitHubIcon fontSize="large" />
           </Link>
-          <Link color="inherit" noWrap variant="body2" href="#" target="_blank">
+          <Link
+            color="inherit"
+            noWrap
+            variant="body2"
+            href="https://www.linkedin.com/in/alvinlee9/"
+            target="_blank"
+          >
             <LinkedInIcon fontSize="large" />
           </Link>
           <Link
